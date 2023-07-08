@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: .5em;
+    font-family: 'Times New Roman', Times, serif;
+    height: 100%;
+}
+
+main {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    height: 100%;
+
+}
+
+.card {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    translate: -50%;
+    border-radius: 1em;
+    width: 100%;
+    height: 100%;
+    padding: 2em;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.card .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    justify-content: center;
+    user-select: none;
+    opacity: .8;
+
+    position: absolute;
+    top: .5em;
+    left: 0em;
+    padding: 0 1em;
+    width: 100%;
+    padding-bottom: .5em;
+}
+
+.card .index {
+    padding: .3em;
+    color: currentColor;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80px;
+    border-bottom: 2px solid #64606069;
+
+}
+
+.card .viewed-icon {
+    color: green;
+    font-size: .7em;
+    position: absolute;
+    right: 1em;
+
+    padding: .2em;
+    border-radius: 5px;
+    border: 1px solid currentColor;
+}
+
+
+.card .index::after {
+    content: ' ⟩';
+    font-size: .7em;
+}
+
+.card .index::before {
+    content: '⟨ ';
+    font-size: .7em;
+}
+
+.card .date {
+    user-select: none;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 3.5em;
+    left: 0;
+}
+
+.card .main {
+    margin-top: -100px;
+    height: fit-content;
+    width: 100%;
+
+}
+
+.card .headline {
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+.card .footer {
+    display: flex;
+    flex-direction: column;
+    padding: .5em;
+    user-select: none;
+    width: 100%;
+    position: absolute;
+    bottom: 1em;
+    left: 0em;
+}
+
+.card .footer a {
+    width: fit-content;
+    margin: .5em auto;
+    color: rgb(0, 143, 143);
+
+}
+
+.card .footer p {
+    padding: .3em;
+}
+
+.card .source {
+    text-align: center;
+    font: 100;
+    font-size: .6em;
+    color: unset;
+    margin: 0 auto;
+}
+
+.card .source::before {
+    content: 'Source:';
+}
+
+
+
+
+.card .swipe {
+    user-select: none;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    bottom: 3.5em;
+    left: 0;
+    color: #5f5c5c51;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 2em;
+}
+
+
+.card .swipe::after,
+.swipe::before {
+    width: 100%;
+    margin: 5px;
+    border-radius: 5px;
+    padding: .5em 0;
+}
+
+.card .swipe::after {
+    content: ' ⟩';
+}
+
+.card .swipe::before {
+    content: '⟨ ';
+}
+
+
+@media (min-width: 768px) {
+    .card {
+        max-width: 600px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .card {
+        background: #222222;
+    }
+
+    body {
+        color: white;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .card {
+        border: 2px solid #c4c2c28a;
+    }
+
+    body {
+        color: #222;
+    }
+}
+
+.skeleton {
+    opacity: .7;
+    animation: skeleton-loading 1s linear infinite alternate;
+}
+
+.skeleton-text {
+    display: inline-block;
+    margin: .3em auto;
+    width: 80%;
+    height: 20px;
+    border-radius: 5px;
+    background: red;
+}
+
+.skeleton-text:last-child {
+    width: 60%;
+
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-color: hsl(200, 20%, 70%);
+    }
+
+    100% {
+        background-color: hsl(200, 20%, 95%);
+    }
+}
+
+.hide {
+    display: none;
+}
