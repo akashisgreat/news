@@ -12,30 +12,53 @@
     <link rel="manifest" href="root/manifest.json">
     <script defer src="root/script.js"></script>
     <script>
-        URL = 'https://pib.gov.in/RssMain.aspx?ModId=6&Lang=2&Regid=3'
-       </script>
+        URL = 'https://pib.gov.in/RssMain.aspx?ModId=6&Lang=1&Regid=3'
+        // URL = 'https://newsonair.gov.in/Top_rss.aspx'
+
+        URLS = {
+            pib: "https://pib.gov.in/RssMain.aspx?ModId=6&Lang=1&Regid=3",
+            newsonair: "https://newsonair.gov.in/Top_rss.aspx",
+        }
+
+
+
+    </script>
 </head>
 
 <body>
     <main>
         <div class="card">
             <div class="header">
-                <h3 class="index"></h3>
+                <h3 class="loading-hide index"></h3>
             </div>
             <div class="main">
-                <h3 class="headline">
+
+                <p class="loading-hide date">
+                    <span style="width: 40%;height: 17px;" class="loading-hide"></span>
+                </p>
+
+
+                <h3 class="loading headline">
+                    <div class="skeleton skeleton-text"></div>
                     <div class="skeleton skeleton-text"></div>
                     <div class="skeleton skeleton-text"></div>
                 </h3>
                 <br><br>
-                <h4 class="description">
-                    <a href="" class="link"></a>
-                </h4>
+                <h4 class="loading-hide description"></h4>
+                <br><br>
+                <a href="" class="loading-hide link"></a>
             </div>
             <div class="footer">
                 <p class="swipe"></p>
-                <br><br>
-                <a href="https://pib.gov.in" class="source">PIB India.</a>
+                <p class="loading-hide timeago">
+                    <span style="width: 40%;height: 17px;" class="loading-hide"></span>
+                </p>
+                <span class="source-info">
+                    <select name="source" id="source">
+                        <option selected value="newsonair">Newsonair</option>
+                        <option value="pib">PIB India</option>
+                    </select>
+                </span>
             </div>
 
         </div>
